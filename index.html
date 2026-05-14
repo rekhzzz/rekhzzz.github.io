@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M Rekhan Andika P | Portfolio</title>
+    <style>
+        .project-card { opacity: 1 !important; transform: none !important; }
+        .hero-content > *, .hero-visual, .section-title { opacity: 1 !important; transform: none !important; }
+    </style>
+    <script>
+        // Remove the style above if JS is enabled to allow animations
+        document.querySelector('style').remove();
+    </script>
+    <meta name="description" content="Portfolio of M Rekhan Andika P (Dika) - Full Stack Engineer, Security Analyst & Algorithm Developer.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark-theme">
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Background Elements -->
+    <div class="bg-grid"></div>
+    <div id="particles-js"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">REKHAN<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="about.html" target="_blank">Tentang Saya</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="reveal-text">
+                <span class="greeting">Halo, Saya</span>
+                <h1 class="glitch" data-text="M Rekhan Andika P">M Rekhan Andika P</h1>
+                <p class="role-container">Seorang <span class="typing-text"></span></p>
+            </div>
+            <p class="hero-description">
+                Pengembang <span>AI-Augmented</span> yang membangun ekosistem digital tangguh—dari Platform Manhwa hingga Algoritma Trading. 
+                Memanfaatkan teknologi masa depan untuk solusi yang cepat, aman, dan efisien.
+            </p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn primary">Lihat Karya Saya</a>
+                <a href="#contact" class="btn secondary">Hubungi Saya</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="orb-container">
+                <div class="profile-glow"></div>
+                <img src="assets/images/profile.png" alt="M Rekhan Andika P" class="hero-img profile-img">
+                <div class="orb-ring"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title" data-outline="PROYEK">Proyek Pilihan</h2>
+            <div class="projects-grid">
+                <!-- LevelUpScan -->
+                <div class="project-card" data-tilt>
+                    <div class="project-img" style="background-image: url('assets/images/project1.png')"></div>
+                    <div class="project-info">
+                        <h3>LevelUpScan</h3>
+                        <p>Platform CMS Manhwa/Manhua full-stack dengan optimasi SEO tingkat tinggi, manajemen slug, dan traffic yang masif.</p>
+                        <div class="tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>SEO</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Rekhzzz" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://levelupscan.my.id" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manhwa Scraper -->
+                <div class="project-card" data-tilt>
+                    <div class="project-img" style="background-image: url('assets/images/project2.png')"></div>
+                    <div class="project-info">
+                        <h3>Manhwa Scraper</h3>
+                        <p>Sistem otomatisasi untuk melakukan scraping data manhwa secara efisien dengan integrasi ke platform pembaca.</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Scrapy</span>
+                            <span>Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Rekhzzz" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://my-manhwa-scraper.vercel.app/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bayesian Backtester -->
+                <div class="project-card" data-tilt>
+                    <div class="project-img" style="background-image: url('assets/images/project3.png')"></div>
+                    <div class="project-info">
+                        <h3>Bayesian Quant Bot</h3>
+                        <p>Mesin trading mean-reversion menggunakan walk-forward rolling calibration dan probabilitas Bayesian untuk sinyal entri.</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>FinTech</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Rekhzzz" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OCR Engine -->
+                <div class="project-card" data-tilt>
+                    <div class="project-img" style="background-image: url('assets/images/project4.png')"></div>
+                    <div class="project-info">
+                        <h3>Sync OCR Engine</h3>
+                        <p>Alat computer vision untuk segmentasi teks manual dan sinkronisasi dalam lingkungan pemindaian presisi tinggi.</p>
+                        <div class="tags">
+                            <span>Javascript</span>
+                            <span>OCR</span>
+                            <span>Vision AI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Rekhzzz" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keahlian Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title" data-outline="KEAHLIAN">Keahlian Saya</h2>
+            <div class="skills-wrapper">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-list">
+                        <div class="skill-item"><span>React / Vite</span><div class="progress"><div class="bar" style="width: 90%"></div></div></div>
+                        <div class="skill-item"><span>Tailwind CSS</span><div class="progress"><div class="bar" style="width: 85%"></div></div></div>
+                        <div class="skill-item"><span>Javascript (ES6+)</span><div class="progress"><div class="bar" style="width: 95%"></div></div></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend & Data</h3>
+                    <div class="skill-list">
+                        <div class="skill-item"><span>Node.js / Express</span><div class="progress"><div class="bar" style="width: 88%"></div></div></div>
+                        <div class="skill-item"><span>Python (Quant)</span><div class="progress"><div class="bar" style="width: 82%"></div></div></div>
+                        <div class="skill-item"><span>MongoDB / SQL</span><div class="progress"><div class="bar" style="width: 80%"></div></div></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>System & Modern Tech</h3>
+                    <div class="skill-list">
+                        <div class="skill-item"><span>AI Tooling & Prompting</span><div class="progress"><div class="bar" style="width: 95%"></div></div></div>
+                        <div class="skill-item"><span>Security Audit</span><div class="progress"><div class="bar" style="width: 75%"></div></div></div>
+                        <div class="skill-item"><span>SEO Strategy</span><div class="progress"><div class="bar" style="width: 90%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-text">
+                    <h2>Siap buat kolaborasi?</h2>
+                    <p>Mari diskusikan proyek besar Anda berikutnya.</p>
+                    <div class="social-links">
+                        <a href="mailto:andikanms7655@gmail.com" class="social-btn mail">
+                            <i class="fa-solid fa-envelope"></i> andikanms7655@gmail.com
+                        </a>
+                        <a href="https://instagram.com/mr_ap07" target="_blank" class="social-btn ig">
+                            <i class="fa-brands fa-instagram"></i> @mr_ap07
+                        </a>
+                        <a href="https://github.com/Rekhzzz" target="_blank" class="social-btn gh">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                <form id="contact-form" action="https://formsubmit.co/andikanms7655@gmail.com" method="POST" target="_blank">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="Pesan Baru dari Portofolio!">
+                    <input type="hidden" name="_template" value="table">
+
+                    <div class="input-group">
+                        <input type="text" name="name" placeholder="Nama" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <textarea name="message" placeholder="Pesan" rows="5" required></textarea>
+                    <button type="submit" class="btn primary glow">Kirim Pesan <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 M Rekhan Andika P. Dibuat dengan <i class="fa-solid fa-heart"></i> & Kafein.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
