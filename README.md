@@ -1,14 +1,18 @@
 # 🚀 Modern AI-Augmented Portfolio - M Rekhan Andika P
 
-Welcome to my personal portfolio! This is a high-performance, dark-themed, futuristic website designed to showcase my work as a modern developer who leverages AI to build robust digital ecosystems.
+**🔗 Live Website:** [https://rekhzzz.github.io](https://rekhzzz.github.io)
 
-## ✨ Features
-- **Modern UI/UX**: Dark futuristic theme with Glassmorphism and Neon accents.
-- **AI-Augmented Branding**: Showcasing a unique identity as a developer who integrates AI for efficiency.
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop.
-- **Functional Contact Form**: Integrated with FormSubmit for direct-to-email messaging.
-- **Interactive Animations**: Powered by GSAP, ScrollTrigger, and Particles.js.
-- **Multi-page Structure**: Dedicated "About Me" page for a deeper look into my philosophy.
+Welcome to my personal portfolio repository! This website is designed as a digital representation of my identity as a modern developer. Built around the concept of **"Vibe Coding"**, this portfolio goes beyond merely showcasing code—it delivers a high-level visual experience featuring a *futuristic dark-theme* aesthetic, *glassmorphism* elements, and butter-smooth interactive animations.
+
+This project also serves as concrete proof of how the integration of *Artificial Intelligence* (AI-Augmented Development) can accelerate the software engineering cycle without compromising UI/UX quality whatsoever. Every element, from typography and layout to *micro-interactions*, is carefully crafted to provide a premium, dynamic, and high-performance feel for every visitor.
+
+## ✨ Key Features
+- **Modern UI/UX & Aesthetics**: An elegant dark theme equipped with *Glassmorphism*, *Neon* touches, and a visually calibrated HSL color palette.
+- **Interactive Animations**: A user experience brought to life through GSAP, ScrollTrigger, responsive *custom cursor* effects, and *Particles.js* for a living background.
+- **AI-Augmented Branding**: Highlights my adaptability as a *modern developer* who leverages AI tools for architectural design, debugging, and coding efficiency.
+- **Fully Responsive**: A highly adaptive layout ensuring a consistent experience across mobile, tablet, and ultra-wide desktop screens.
+- **Functional Contact System**: Integration with *FormSubmit*, allowing messages to be sent directly and securely to my email inbox without any backend setup.
+- **Dedicated "About Me" Section**: A structured page to dive deep into my development philosophy, career journey, and mastery of my tech stack.
 
 ## 🛠️ Tech Stack
 - **Frontend**: HTML5, Vanilla CSS3, JavaScript (ES6+).
@@ -19,10 +23,11 @@ Welcome to my personal portfolio! This is a high-performance, dark-themed, futur
   - [Google Fonts](https://fonts.google.com/) (Typography)
 
 ## 📂 Project Highlights
-1. **LevelUpScan**: A full-stack Manhwa/Manhua CMS with high SEO optimization.
-2. **Manhwa Scraper**: An automated scraping system for digital content.
-3. **Bayesian Quant Bot**: Algorithmic trading engine with rolling calibration.
-4. **Sync OCR Engine**: High-precision computer vision tool for text segmentation.
+1. **LevelUpScan**: A full-stack Manhwa/Manhua CMS platform with top-tier SEO optimization.
+2. **Manhwa Scraper**: A Python-based automated system for highly efficient digital data scraping.
+3. **Web Portfolio**: (This repository) An interactive portfolio website with modern design and dynamic animations.
+4. **Bayesian Quant Bot**: An algorithmic trading engine (*mean-reversion*) utilizing *walk-forward* calibration.
+5. **Sync OCR Engine**: A computer vision tool (*Javascript*) for high-precision text segmentation.
 
 ---
 
