@@ -57,10 +57,36 @@ const follower = document.querySelector('.cursor-follower');
 let mouseX = 0, mouseY = 0;
 let posX = 0, posY = 0;
 
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+function updateCursorPosition(e) {
+    if (e.type === 'touchstart' || e.type === 'touchmove') {
+        mouseX = e.touches[0].clientX;
+        mouseY = e.touches[0].clientY;
+    } else {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    }
+    
+    // Show cursor on first interaction
+    cursor.classList.add('cursor-active');
+    follower.classList.add('cursor-active');
+    
     cursor.style.transform = `translate3d(${mouseX - 5}px, ${mouseY - 5}px, 0)`;
+}
+
+document.addEventListener('mousemove', updateCursorPosition);
+document.addEventListener('touchstart', updateCursorPosition);
+document.addEventListener('touchmove', updateCursorPosition);
+
+// Hide cursor when leaving window
+document.addEventListener('mouseleave', () => {
+    cursor.classList.remove('cursor-active');
+    follower.classList.remove('cursor-active');
+});
+
+// Hide cursor when touch ends
+document.addEventListener('touchend', () => {
+    cursor.classList.remove('cursor-active');
+    follower.classList.remove('cursor-active');
 });
 
 function animateCursor() {
@@ -156,6 +182,10 @@ if (projectCards.length > 0) {
     });
 }
 
+// Start Typing
+document.addEventListener('DOMContentLoaded', () => {
+    type();
+});
 // Start Typing
 document.addEventListener('DOMContentLoaded', () => {
     type();
