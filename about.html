@@ -4,11 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tentang Saya | M Rekhan Andika P</title>
+    <style>
+        .about-content, .section-title { opacity: 1 !important; transform: none !important; }
+    </style>
+    <script>
+        // Remove the style above if JS is enabled to allow animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const fallbackStyle = document.querySelector('head style');
+            if (fallbackStyle) fallbackStyle.remove();
+        });
+    </script>
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rekhzzz.github.io/about.html">
+    <meta property="og:title" content="Tentang Saya | M Rekhan Andika P">
+    <meta property="og:description" content="Portfolio of M Rekhan Andika P (Dika) - Full Stack Engineer, Security Analyst & Algorithm Developer.">
+    <meta property="og:image" content="https://rekhzzz.github.io/assets/images/project5.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,7 +33,17 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="dark-theme">
+<body class="light-theme">
+    <!-- Mobile Toggle Wrapper for stability -->
+    <div class="mobile-toggle-wrapper">
+        <button class="theme-toggle mobile-theme-toggle" aria-label="Toggle Theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="progress-bar"></div>
+
     <!-- Custom Cursor -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
@@ -36,6 +63,9 @@
                 <li><a href="index.html#skills">Skills</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -45,7 +75,8 @@
     </nav>
 
     <!-- Main Content -->
-    <main style="padding-top: 150px; min-height: 80vh;">
+    <main class="about-page">
+        <div class="hero-bg-text">ABOUT ME</div>
         <section class="section">
             <div class="container">
                 <h2 class="section-title" data-outline="PROFIL">Tentang Saya</h2>

@@ -14,10 +14,17 @@
     </script>
     <meta name="description" content="Portfolio of M Rekhan Andika P (Dika) - Full Stack Engineer, Security Analyst & Algorithm Developer.">
     
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rekhzzz.github.io/">
+    <meta property="og:title" content="M Rekhan Andika P | Portfolio">
+    <meta property="og:description" content="Portfolio of M Rekhan Andika P (Dika) - Full Stack Engineer, Security Analyst & Algorithm Developer.">
+    <meta property="og:image" content="https://rekhzzz.github.io/assets/images/project5.png">
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,7 +32,17 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="dark-theme">
+<body class="light-theme">
+    <!-- Mobile Toggle Wrapper for stability -->
+    <div class="mobile-toggle-wrapper">
+        <button class="theme-toggle mobile-theme-toggle" aria-label="Toggle Theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="progress-bar"></div>
+
     <!-- Custom Cursor -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
@@ -40,11 +57,14 @@
             <a href="#" class="logo">REKHAN<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
-                <li><a href="about.html" target="_blank">Tentang Saya</a></li>
+                <li><a href="about.html">Tentang Saya</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -55,6 +75,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-bg-text">DEVELOPER</div>
         <div class="hero-content">
             <div class="reveal-text">
                 <span class="greeting">Halo, Saya</span>
@@ -85,91 +106,126 @@
             <h2 class="section-title" data-outline="PROYEK">Proyek Pilihan</h2>
             <div class="projects-grid">
                 <!-- LevelUpScan -->
-                <div class="project-card" data-tilt>
-                    <div class="project-img" style="background-image: url('assets/images/project1.png')"></div>
-                    <div class="project-info">
-                        <h3>LevelUpScan</h3>
-                        <p>Platform CMS Manhwa/Manhua full-stack dengan optimasi SEO tingkat tinggi, manajemen slug, dan traffic yang masif.</p>
-                        <div class="tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                            <span>SEO</span>
+                <div class="project-card" onclick="explodeCard(this, event)">
+                    <div class="original-content">
+                        <div class="project-img" style="background-image: url('assets/images/project1.png')"></div>
+                        <div class="project-info">
+                            <h3>LevelUpScan</h3>
+                            <p>Platform CMS Manhwa/Manhua full-stack dengan optimasi SEO tingkat tinggi, manajemen slug, dan traffic yang masif.</p>
+                            <div class="tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                                <span>SEO</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Rekhzzz/levelupscan" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://levelupscan.my.id" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Rekhzzz/levelupscan" target="_blank"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://levelupscan.my.id" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
+                    </div>
+                    <div class="action-menu" style="display: none;">
+                        <button class="btn primary" onclick="restoreCard(this, event)">Kembali</button>
+                        <a href="https://github.com/Rekhzzz/levelupscan" target="_blank" class="btn secondary"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="https://levelupscan.my.id" target="_blank" class="btn secondary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
                     </div>
                 </div>
 
                 <!-- Manhwa Scraper -->
-                <div class="project-card" data-tilt>
-                    <div class="project-img" style="background-image: url('assets/images/project2.png')"></div>
-                    <div class="project-info">
-                        <h3>Manhwa Scraper</h3>
-                        <p>Sistem otomatisasi untuk melakukan scraping data manhwa secara efisien dengan integrasi ke platform pembaca.</p>
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>Scrapy</span>
-                            <span>Automation</span>
+                <div class="project-card" onclick="explodeCard(this, event)">
+                    <div class="original-content">
+                        <div class="project-img" style="background-image: url('assets/images/project2.png')"></div>
+                        <div class="project-info">
+                            <h3>Manhwa Scraper</h3>
+                            <p>Sistem otomatisasi untuk melakukan scraping data manhwa secara efisien dengan integrasi ke platform pembaca.</p>
+                            <div class="tags">
+                                <span>Python</span>
+                                <span>Scrapy</span>
+                                <span>Automation</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Rekhzzz/manhwa-manhua-manga-scraper-by-rekhzz-samasta" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://my-manhwa-scraper.vercel.app/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Rekhzzz/manhwa-manhua-manga-scraper-by-rekhzz-samasta" target="_blank"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://my-manhwa-scraper.vercel.app/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
+                    </div>
+                    <div class="action-menu" style="display: none;">
+                        <button class="btn primary" onclick="restoreCard(this, event)">Kembali</button>
+                        <a href="https://github.com/Rekhzzz/manhwa-manhua-manga-scraper-by-rekhzz-samasta" target="_blank" class="btn secondary"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="https://my-manhwa-scraper.vercel.app/" target="_blank" class="btn secondary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
                     </div>
                 </div>
 
                 <!-- Web Portofolio -->
-                <div class="project-card" data-tilt>
-                    <div class="project-img" style="background-image: url('assets/images/project5.png')"></div>
-                    <div class="project-info">
-                        <h3>Web Portofolio</h3>
-                        <p>Website portofolio interaktif dan modern dengan desain UI/UX premium dan animasi dinamis.</p>
-                        <div class="tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JS</span>
+                <div class="project-card" onclick="explodeCard(this, event)">
+                    <div class="original-content">
+                        <div class="project-img" style="background-image: url('assets/images/project5.png')"></div>
+                        <div class="project-info">
+                            <h3>Web Portofolio</h3>
+                            <p>Website portofolio interaktif dan modern dengan desain UI/UX premium dan animasi dinamis.</p>
+                            <div class="tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/rekhzzz/rekhzzz.github.io" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://rekhzzz.github.io" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/rekhzzz/rekhzzz.github.io" target="_blank"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://rekhzzz.github.io" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
+                    </div>
+                    <div class="action-menu" style="display: none;">
+                        <button class="btn primary" onclick="restoreCard(this, event)">Kembali</button>
+                        <a href="https://github.com/rekhzzz/rekhzzz.github.io" target="_blank" class="btn secondary"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="https://rekhzzz.github.io" target="_blank" class="btn secondary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
                     </div>
                 </div>
 
                 <!-- Bayesian Backtester -->
-                <div class="project-card" data-tilt>
-                    <div class="project-img" style="background-image: url('assets/images/project3.png')"></div>
-                    <div class="project-info">
-                        <h3>Bayesian Quant Bot</h3>
-                        <p>Mesin trading mean-reversion menggunakan walk-forward rolling calibration dan probabilitas Bayesian untuk sinyal entri.</p>
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>Pandas</span>
-                            <span>FinTech</span>
+                <div class="project-card" onclick="explodeCard(this, event)">
+                    <div class="original-content">
+                        <div class="project-img" style="background-image: url('assets/images/project3.png')"></div>
+                        <div class="project-info">
+                            <h3>Bayesian Quant Bot</h3>
+                            <p>Mesin trading mean-reversion menggunakan walk-forward rolling calibration dan probabilitas Bayesian untuk sinyal entri.</p>
+                            <div class="tags">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>FinTech</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Rekhzzz" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            </div>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Rekhzzz" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        </div>
+                    </div>
+                    <div class="action-menu" style="display: none;">
+                        <button class="btn primary" onclick="restoreCard(this, event)">Kembali</button>
+                        <a href="https://github.com/Rekhzzz" target="_blank" class="btn secondary"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="#" class="btn secondary disabled" onclick="event.preventDefault()"><i class="fa-solid fa-lock"></i> Private</a>
                     </div>
                 </div>
 
                 <!-- OCR Engine -->
-                <div class="project-card" data-tilt>
-                    <div class="project-img" style="background-image: url('assets/images/project4.png')"></div>
-                    <div class="project-info">
-                        <h3>Sync OCR Engine</h3>
-                        <p>Alat computer vision untuk segmentasi teks manual dan sinkronisasi dalam lingkungan pemindaian presisi tinggi.</p>
-                        <div class="tags">
-                            <span>Javascript</span>
-                            <span>OCR</span>
-                            <span>Vision AI</span>
+                <div class="project-card" onclick="explodeCard(this, event)">
+                    <div class="original-content">
+                        <div class="project-img" style="background-image: url('assets/images/project4.png')"></div>
+                        <div class="project-info">
+                            <h3>Sync OCR Engine</h3>
+                            <p>Alat computer vision untuk segmentasi teks manual dan sinkronisasi dalam lingkungan pemindaian presisi tinggi.</p>
+                            <div class="tags">
+                                <span>Javascript</span>
+                                <span>OCR</span>
+                                <span>Vision AI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Rekhzzz" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            </div>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Rekhzzz" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        </div>
+                    </div>
+                    <div class="action-menu" style="display: none;">
+                        <button class="btn primary" onclick="restoreCard(this, event)">Kembali</button>
+                        <a href="https://github.com/Rekhzzz" target="_blank" class="btn secondary"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="#" class="btn secondary disabled" onclick="event.preventDefault()"><i class="fa-solid fa-lock"></i> Private</a>
                     </div>
                 </div>
             </div>
