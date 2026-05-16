@@ -1,0 +1,13 @@
+# Mengabaikan folder dependency (jika nanti pakai npm)
+node_modules/
+
+# Mengabaikan file sistem Windows/Mac
+Thumbs.db
+.DS_Store
+
+# Mengabaikan file log
+*.log
+
+# Mengabaikan kode untuk nambah proyek dan contekan (biar nggak nyampe ke GitHub)
+kode-untuk-nambah-proyek.html
+interview_cheatsheet.md

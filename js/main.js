@@ -21,7 +21,7 @@ if (document.getElementById('particles-js')) {
 
 // Typing Effect
 const typingText = document.querySelector('.typing-text');
-const roles = ['Full-Stack Engineer', 'Security Analyst', 'Pakar Algoritma', 'Arsitek Sistem'];
+const roles = ['AI-Augmented Developer', 'Network Administrator', 'Systems Integrator', 'Linux Enthusiast'];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -395,3 +395,92 @@ function restoreCard(btn, event) {
         }
     });
 }
+
+// --- Project Slider & Auto-Scroll ---
+const projectsGrid = document.querySelector('.projects-grid');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const indicatorsContainer = document.querySelector('.slider-indicators');
+
+if (projectsGrid && prevBtn && nextBtn && indicatorsContainer) {
+    const projectCards = projectsGrid.querySelectorAll('.project-card');
+    
+    // Create Indicators based on project count
+    projectCards.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.classList.add('indicator');
+        if (index === 0) indicator.classList.add('active');
+        
+        indicator.addEventListener('click', () => {
+            stopAutoScroll();
+            const cardWidth = projectCards[0].clientWidth + 30;
+            projectsGrid.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+            setTimeout(startAutoScroll, 2000); // Resume auto scroll after a delay
+        });
+        
+        indicatorsContainer.appendChild(indicator);
+    });
+
+    const indicators = indicatorsContainer.querySelectorAll('.indicator');
+
+    const getScrollAmount = () => {
+        const card = projectsGrid.querySelector('.project-card');
+        return card ? card.clientWidth + 30 : projectsGrid.clientWidth;
+    };
+
+    const updateActiveIndicator = () => {
+        const scrollLeft = projectsGrid.scrollLeft;
+        const cardWidth = getScrollAmount();
+        const activeIndex = Math.round(scrollLeft / cardWidth);
+        
+        indicators.forEach((ind, i) => {
+            ind.classList.toggle('active', i === activeIndex);
+        });
+    };
+
+    projectsGrid.addEventListener('scroll', updateActiveIndicator);
+
+    prevBtn.addEventListener('click', () => {
+        projectsGrid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+        const maxScroll = projectsGrid.scrollWidth - projectsGrid.clientWidth;
+        if (projectsGrid.scrollLeft >= maxScroll - 10) {
+            projectsGrid.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            projectsGrid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        }
+    });
+
+    // Auto Scroll Logic
+    let autoScrollInterval;
+    const startAutoScroll = () => {
+        stopAutoScroll(); 
+        autoScrollInterval = setInterval(() => {
+            const maxScroll = projectsGrid.scrollWidth - projectsGrid.clientWidth;
+            if (projectsGrid.scrollLeft >= maxScroll - 10) {
+                projectsGrid.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                projectsGrid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            }
+        }, 5000);
+    };
+
+    const stopAutoScroll = () => {
+        if (autoScrollInterval) clearInterval(autoScrollInterval);
+    };
+
+    startAutoScroll();
+
+    // Pause on interaction
+    const container = document.querySelector('.slider-container');
+    if (container) {
+        container.addEventListener('mouseenter', stopAutoScroll);
+        container.addEventListener('mouseleave', startAutoScroll);
+        container.addEventListener('touchstart', stopAutoScroll, {passive: true});
+        container.addEventListener('touchend', startAutoScroll, {passive: true});
+    }
+}
+
+
