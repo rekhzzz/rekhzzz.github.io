@@ -23,11 +23,10 @@ This project also serves as concrete proof of how the integration of *Artificial
   - [Google Fonts](https://fonts.google.com/) (Typography)
 
 ## 📂 Project Highlights
-1. **LevelUpScan**: A full-stack Manhwa/Manhua CMS platform with top-tier SEO optimization.
-2. **Manhwa Scraper**: A Python-based automated system for highly efficient digital data scraping.
-3. **Web Portfolio**: (This repository) An interactive portfolio website with modern design and dynamic animations.
-4. **Bayesian Quant Bot**: An algorithmic trading engine (*mean-reversion*) utilizing *walk-forward* calibration.
-5. **Sync OCR Engine**: A computer vision tool (*Javascript*) for high-precision text segmentation.
+1. **LevelUpScan**: A full-stack Manhwa CMS platform using React, Node.js, MongoDB Atlas, ImgBB API, and automated sitemap SEO.
+2. **Manhwa Scraper**: A Python-based automation scraper directed and debugged using AI to bypass targets' cloud firewalls.
+3. **Web Portfolio**: (This repository) An interactive, GPU-accelerated portfolio website built with HTML/CSS, JS, and GSAP.
+4. **Software Pengingat 20-20-20**: A cross-platform desktop utility built with Electron.js to prevent eye strain using custom intervals and dashboard multi-language supports.
 
 ---
 

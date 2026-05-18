@@ -28,6 +28,7 @@ let isDeleting = false;
 let typeSpeed = 100;
 
 function type() {
+    if (!typingText) return;
     const currentRole = roles[roleIndex];
     if (isDeleting) {
         typingText.textContent = currentRole.substring(0, charIndex - 1);
@@ -56,6 +57,7 @@ const cursor = document.querySelector('.cursor');
 const follower = document.querySelector('.cursor-follower');
 let mouseX = 0, mouseY = 0;
 let posX = 0, posY = 0;
+let cursorScale = 1;
 
 const isMobile = window.matchMedia("(max-width: 768px)").matches;
 if (cursor && follower && !isMobile) {
@@ -94,7 +96,7 @@ if (cursor && follower && !isMobile) {
     function animateCursor() {
         posX += (mouseX - posX) / 8;
         posY += (mouseY - posY) / 8;
-        follower.style.transform = `translate3d(${posX - 15}px, ${posY - 15}px, 0)`;
+        follower.style.transform = `translate3d(${posX - 15}px, ${posY - 15}px, 0) scale(${cursorScale})`;
         requestAnimationFrame(animateCursor);
     }
     animateCursor();
@@ -194,15 +196,15 @@ if (document.querySelector('.about-content')) {
 const interactables = document.querySelectorAll('a, button:not(.mobile-theme-toggle), .project-card, .skill-item');
 interactables.forEach(el => {
     el.addEventListener('mouseenter', () => {
+        cursorScale = 1.8;
         if (follower) {
-            follower.style.transform = `translate3d(${posX - 15}px, ${posY - 15}px, 0) scale(2)`;
-            follower.style.background = 'rgba(14, 165, 233, 0.1)';
+            follower.style.background = 'rgba(14, 165, 233, 0.15)';
             follower.style.borderColor = 'transparent';
         }
     });
     el.addEventListener('mouseleave', () => {
+        cursorScale = 1;
         if (follower) {
-            follower.style.transform = `translate3d(${posX - 15}px, ${posY - 15}px, 0) scale(1)`;
             follower.style.background = 'transparent';
             follower.style.borderColor = 'var(--primary)';
         }
