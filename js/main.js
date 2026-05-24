@@ -21,7 +21,7 @@ if (document.getElementById('particles-js')) {
 
 // Typing Effect
 const typingText = document.querySelector('.typing-text');
-const roles = ['AI-Augmented Developer', 'Network Administrator', 'Systems Integrator', 'Linux Enthusiast'];
+const roles = ['Lulusan SMK TKJ', 'Tech Enthusiast', 'Self-Taught Developer', 'Peminat Software & Jaringan'];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -193,7 +193,7 @@ if (document.querySelector('.about-content')) {
 }
 
 // Hover effect for links and buttons
-const interactables = document.querySelectorAll('a, button:not(.mobile-theme-toggle), .project-card, .skill-item');
+const interactables = document.querySelectorAll('a, button:not(.mobile-theme-toggle), .project-card, .skill-card');
 interactables.forEach(el => {
     el.addEventListener('mouseenter', () => {
         cursorScale = 1.8;
