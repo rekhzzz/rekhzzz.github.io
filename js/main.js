@@ -2,18 +2,18 @@
 if (document.getElementById('particles-js')) {
     particlesJS('particles-js', {
         particles: {
-            number: { value: 80, density: { enable: true, value_area: 800 } },
-            color: { value: "#0ea5e9" },
+            number: { value: 60, density: { enable: true, value_area: 800 } },
+            color: { value: "#e056fd" },
             shape: { type: "circle" },
-            opacity: { value: 0.3, random: false },
+            opacity: { value: 0.15, random: false },
             size: { value: 2, random: true },
-            line_linked: { enable: true, distance: 150, color: "#8b5cf6", opacity: 0.2, width: 1 },
-            move: { enable: true, speed: 1.5, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
+            line_linked: { enable: true, distance: 150, color: "#000000", opacity: 0.08, width: 1 },
+            move: { enable: true, speed: 1.2, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
         },
         interactivity: {
             detect_on: "canvas",
             events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
-            modes: { grab: { distance: 140, line_linked: { opacity: 1 } }, push: { particles_nb: 4 } }
+            modes: { grab: { distance: 140, line_linked: { opacity: 0.5 } }, push: { particles_nb: 3 } }
         },
         retina_detect: true
     });
@@ -168,7 +168,8 @@ sections.forEach(section => {
             x: -100,
             opacity: 0,
             duration: 1,
-            ease: 'power3.out'
+            ease: 'power3.out',
+            clearProps: 'transform'
         });
     }
 });
@@ -176,37 +177,58 @@ sections.forEach(section => {
 // About Page Content Reveal
 if (document.querySelector('.about-content')) {
     gsap.from('.about-text', {
+        scrollTrigger: {
+            trigger: '.about-content',
+            start: 'top 85%',
+        },
         x: -50,
         opacity: 0,
         duration: 1,
-        delay: 0.3,
         ease: 'power3.out'
     });
     gsap.from('.stat-item', {
+        scrollTrigger: {
+            trigger: '.about-stats',
+            start: 'top 85%',
+        },
         scale: 0.8,
         opacity: 0,
         duration: 0.8,
         stagger: 0.2,
-        delay: 0.5,
         ease: 'back.out(1.7)'
     });
 }
 
+// Education Section Flow Items Reveal
+if (document.querySelector('.edu-flow')) {
+    gsap.from('.edu-flow-item', {
+        scrollTrigger: {
+            trigger: '.edu-flow',
+            start: 'top 85%',
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'power2.out'
+    });
+}
+
 // Hover effect for links and buttons
-const interactables = document.querySelectorAll('a, button:not(.mobile-theme-toggle), .project-card, .skill-card');
+const interactables = document.querySelectorAll('a, button:not(.mobile-theme-toggle), .project-card, .skill-card, .edu-flow-content');
 interactables.forEach(el => {
     el.addEventListener('mouseenter', () => {
-        cursorScale = 1.8;
+        cursorScale = 1.5;
         if (follower) {
-            follower.style.background = 'rgba(14, 165, 233, 0.15)';
-            follower.style.borderColor = 'transparent';
+            follower.style.background = 'var(--primary)';
+            follower.style.opacity = '0.5';
         }
     });
     el.addEventListener('mouseleave', () => {
         cursorScale = 1;
         if (follower) {
             follower.style.background = 'transparent';
-            follower.style.borderColor = 'var(--primary)';
+            follower.style.opacity = '1';
         }
     });
 });
@@ -319,8 +341,8 @@ function explodeCard(card, event) {
     const particleCount = 40;
     const isDark = document.body.classList.contains('dark-theme');
     const colors = isDark ? 
-        ['#00f2ff', '#7000ff', '#ffffff', '#2a2a35'] : 
-        ['#0ea5e9', '#8b5cf6', '#ffffff', '#cbd5e1'];
+        ['#00f2ff', '#e056fd', '#ffffff', '#000000'] : 
+        ['#e056fd', '#f1c40f', '#000000', '#ffffff'];
     
     for (let i = 0; i < particleCount; i++) {
         createParticle(clickX, clickY, colors);
@@ -484,5 +506,49 @@ if (projectsGrid && prevBtn && nextBtn && indicatorsContainer) {
         container.addEventListener('touchend', startAutoScroll, {passive: true});
     }
 }
+
+// Active Link on Scroll & Click (ScrollSpy)
+const navLinksArray = document.querySelectorAll('.nav-links a');
+const sectionElements = document.querySelectorAll('section');
+
+function scrollSpy() {
+    let currentId = '';
+    const scrollPos = window.scrollY || document.documentElement.scrollTop;
+    
+    sectionElements.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (scrollPos >= (sectionTop - 160)) {
+            currentId = section.getAttribute('id');
+        }
+    });
+
+    if (currentId) {
+        navLinksArray.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentId}`) {
+                link.classList.add('active');
+            }
+        });
+    } else {
+        navLinksArray.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#home' || link.getAttribute('href') === '#') {
+                link.classList.add('active');
+            }
+        });
+    }
+}
+
+window.addEventListener('scroll', scrollSpy);
+window.addEventListener('DOMContentLoaded', scrollSpy);
+
+navLinksArray.forEach(link => {
+    link.addEventListener('click', function() {
+        navLinksArray.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
 
 
